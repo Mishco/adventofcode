@@ -4,7 +4,16 @@
 1st December to 25th December every year since 2015. Each day has two puzzles that you can solve with your programming
 language of choice.
 
-:toc:
+Table of contents
+=================
+
+<!--ts-->
+
+* [2023](#2023)
+  * [python](#python)
+* [2024](#2024)
+
+<!--te-->
 
 
 ## 2023
