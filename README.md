@@ -8,17 +8,18 @@ Table of contents
 =================
 
 <!--ts-->
-
 * [2023](#2023)
-  * [python](#python)
+  * [rust](#rust-solution-for-2023)
+  * [python](#python-solution-for-2023)
 * [2024](#2024)
-
+  * [rust](#rust-solution-for-2024)
+  * [python](#python-solution-for-2023)
 <!--te-->
 
 
 ## 2023
 
-### Rust solution
+### Rust solution for 2023
 
 | 🎄 Day 🎄 |           💻 Part 1 💻            |           💻 Part 2 💻            |
 |:---------:|:---------------------------------:|:---------------------------------:|
@@ -29,7 +30,7 @@ Table of contents
 |  Day 05   | [Part-1](2023/rust/src/bin/05.rs) | [Part-2](2023/rust/src/bin/05.rs) |
 |  Day 06   | [Part-1](2023/rust/src/bin/06.rs) | [Part-2](2023/rust/src/bin/06.rs) |
 
-### Python solution
+### Python solution for 2023
 
 | 🎄 Day 🎄 |             💻 Part 1 💻             |             💻 Part 2 💻             |
 |:---------:|:------------------------------------:|:------------------------------------:|
@@ -61,7 +62,7 @@ Table of contents
 
 ## 2024
 
-### Rust
+### Rust solution for 2024
 
 Benchmark
 
@@ -95,7 +96,4 @@ Benchmark
 
 **Total: 1660.58ms**
 
-### Python
-
-
-
+### Python solution for 2024
