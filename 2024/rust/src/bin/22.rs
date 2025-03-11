@@ -8,9 +8,9 @@ const OFFSET: i64 = 9;
 
 #[inline]
 fn step(secret: &i64) -> i64 {
-    let mut secret = (secret ^ secret << 6) & MASK;
+    let mut secret = (secret ^ (secret << 6)) & MASK;
     secret ^= secret >> 5;
-    (secret ^ secret << 11) & MASK
+    (secret ^ (secret << 11)) & MASK
 }
 
 pub fn part_one(input: &str) -> Option<i64> {
