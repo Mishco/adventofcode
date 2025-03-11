@@ -111,3 +111,4 @@ ENV/
 
 # jupyter notebook server logs
 jupyter_notebook.log
+/2022/python/inputs/
