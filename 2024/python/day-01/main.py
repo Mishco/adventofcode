@@ -1,7 +1,37 @@
+from collections import Counter
+
+
 def part1():
+    result = 0
+    columns1, columns2 = load_input_to_two_cols()
+
+    for i in range(0, len(columns1)):
+        left = int(columns1[i])
+        right = int(columns2[i])
+        result += abs(left - right)
+
+    return result
+
+
+def part2():
+    columns1, columns2 = load_input_to_two_cols()
+    result = 0
+    count_map = Counter()
+
+    for num in columns2:
+        count_map[num] += 1
+
+    for left in columns1:
+        count = count_map.get(left)
+        if count:
+            result += int(left) * int(count)
+
+    return result
+
+
+def load_input_to_two_cols():
     columns1 = []
     columns2 = []
-    result = 0
 
     with open('../../rust/data/inputs/01.txt', mode='r') as f:
         lines = f.read().splitlines()
@@ -13,14 +43,9 @@ def part1():
 
     columns1.sort()
     columns2.sort()
-
-    for i in range(0, len(columns1)):
-        left = int(columns1[i])
-        right = int(columns2[i])
-        result += abs(left - right)
-
-    return result
+    return columns1, columns2
 
 
 if __name__ == '__main__':
     print(part1())
+    print(part2())
