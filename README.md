@@ -8,15 +8,39 @@ Table of contents
 =================
 
 <!--ts-->
+
+* [2021](#2021)
+    * [python](#python-solution-for-2021)
+    * [rust](#rust-solution-for-2021)
 * [2022](#2022)
-  * [python](#python-solution-for-2023)
+    * [python](#python-solution-for-2023)
 * [2023](#2023)
-  * [rust](#rust-solution-for-2023)
-  * [python](#python-solution-for-2023)
+    * [rust](#rust-solution-for-2023)
+    * [python](#python-solution-for-2023)
 * [2024](#2024)
-  * [rust](#rust-solution-for-2024)
-  * [python](#python-solution-for-2023)
+    * [rust](#rust-solution-for-2024)
+    * [python](#python-solution-for-2023)
+
 <!--te-->
+
+## 2021
+
+### Python solution for 2021
+
+| 🎄 Day 🎄 |             💻 Part 1 💻             |             💻 Part 2 💻             |
+|:---------:|:------------------------------------:|:------------------------------------:|
+|  Day 01   | [Part-1](2021/python/day-01/main.py) | [Part-2](2021/python/day-01/main.py) |
+|  Day 02   | [Part-1](2021/python/day-02/main.py) | [Part-2](2021/python/day-02/main.py) |
+|  Day 03   | [Part-1](2021/python/day-03/main.py) | [Part-2](2021/python/day-03/main.py) |
+|  Day 04   | [Part-1](2021/python/day-04/main.py) | [Part-2](2021/python/day-04/main.py) |
+
+### Rust solution for 2021
+
+| 🎄 Day 🎄 |               💻 Part 1 💻                |               💻 Part 2 💻                |
+|:---------:|:-----------------------------------------:|:-----------------------------------------:|
+|  Day 01   | [Part-1](2021/rust/day-01-rs/src/main.rs) | [Part-2](2021/rust/day-01-rs/src/main.rs) |
+|  Day 01   | [Part-1](2021/rust/day-02-rs/src/main.rs) | [Part-2](2021/rust/day-03-rs/src/main.rs) |
+|  Day 01   | [Part-1](2021/rust/day-02-rs/src/main.rs) | [Part-2](2021/rust/day-03-rs/src/main.rs) |
 
 ## 2022
 
