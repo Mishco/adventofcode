@@ -8,6 +8,8 @@ Table of contents
 =================
 
 <!--ts-->
+* [2022](#2022)
+  * [python](#python-solution-for-2023)
 * [2023](#2023)
   * [rust](#rust-solution-for-2023)
   * [python](#python-solution-for-2023)
@@ -16,6 +18,20 @@ Table of contents
   * [python](#python-solution-for-2023)
 <!--te-->
 
+## 2022
+
+### Python solution for 2022
+
+| 🎄 Day 🎄 |            💻 Part 1 💻             |            💻 Part 2 💻             |
+|:---------:|:-----------------------------------:|:-----------------------------------:|
+|  Day 01   | [Part-1](2022/python/day-1/main.py) | [Part-2](2022/python/day-1/main.py) |
+|  Day 02   | [Part-1](2022/python/day-2/main.py) | [Part-2](2022/python/day-2/main.py) |
+|  Day 03   | [Part-1](2022/python/day-3/main.py) | [Part-2](2022/python/day-3/main.py) |
+|  Day 04   | [Part-1](2022/python/day-4/main.py) | [Part-2](2022/python/day-4/main.py) |
+|  Day 05   | [Part-1](2022/python/day-5/main.py) | [Part-2](2022/python/day-5/main.py) |
+|  Day 06   | [Part-1](2022/python/day-6/main.py) | [Part-2](2022/python/day-6/main.py) |
+|  Day 07   | [Part-1](2022/python/day-7/main.py) | [Part-2](2022/python/day-7/main.py) |
+|  Day 08   | [Part-1](2022/python/day-8/main.py) | [Part-2](2022/python/day-8/main.py) |
 
 ## 2023
 
