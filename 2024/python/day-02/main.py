@@ -14,7 +14,7 @@ def part1():
     return safe_count
 
 
-def checking_level(nums):
+def checking_level(nums: []) -> bool:
     is_increasing = True
     is_decreasing = True
 
@@ -35,7 +35,21 @@ def checking_level(nums):
 
 
 def part2():
-    pass
+    safe_count = 0
+    with open('../../rust/data/inputs/02.txt', mode='r') as f:
+        lines = f.read().splitlines()
+        for line in lines:
+            nums = line.split()
+            if checking_level(nums):
+                safe_count += 1
+            else:
+                for i in range(0, len(nums)):
+                    cleaned_level = nums.copy()
+                    cleaned_level.pop(i)
+                    if checking_level(cleaned_level):
+                        safe_count += 1
+                        break
+    return safe_count
 
 
 if __name__ == '__main__':
