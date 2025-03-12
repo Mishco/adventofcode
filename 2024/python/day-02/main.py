@@ -1,6 +1,11 @@
-import time
+import os
+import sys
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'utils')))
+from benchmark import benchmark
 
 
+@benchmark
 def part1():
     safe_count = 0
     with open('../../rust/data/inputs/02.txt', mode='r') as f:
@@ -33,7 +38,7 @@ def checking_level(nums: []) -> bool:
 
     return is_increasing or is_decreasing
 
-
+@benchmark
 def part2():
     safe_count = 0
     with open('../../rust/data/inputs/02.txt', mode='r') as f:
@@ -53,9 +58,5 @@ def part2():
 
 
 if __name__ == '__main__':
-    start_time = time.perf_counter()
     print(part1())
     print(part2())
-    end_time = time.perf_counter()
-    elapsed_time = (end_time - start_time) * 1_000_000  # Convert to microseconds
-    print(f"Execution time: {elapsed_time:.4f} µs")
