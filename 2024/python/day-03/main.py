@@ -1,6 +1,12 @@
 import re
+import sys
+import os
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'utils')))
+from benchmark import benchmark
 
 
+@benchmark
 def part1():
     pattern = r"mul\((\d+),\s*(\d+)\)"
     total = 0
@@ -16,6 +22,7 @@ def part1():
     return total
 
 
+@benchmark
 def part2():
     pattern = re.compile(r"mul\((\d+),(\d+)\)|don't\(\)|do\(\)")
     is_enabled = True
