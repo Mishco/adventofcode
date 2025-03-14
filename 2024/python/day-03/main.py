@@ -17,7 +17,24 @@ def part1():
 
 
 def part2():
-    pass
+    pattern = re.compile(r"mul\((\d+),(\d+)\)|don't\(\)|do\(\)")
+    is_enabled = True
+    result = 0
+
+    with open('../../rust/data/inputs/03.txt', mode='r') as f:
+        lines = f.read().splitlines()
+        for line in lines:
+            for match in pattern.finditer(line):
+                if match.group(0).startswith("mul"):
+                    x = int(match.group(1))
+                    y = int(match.group(2))
+                    if is_enabled:
+                        result += x * y
+                elif match.group(0).startswith("don't()"):
+                    is_enabled = False
+                elif match.group(0).startswith("do()"):
+                    is_enabled = True
+    return result
 
 
 if __name__ == '__main__':
