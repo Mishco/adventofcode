@@ -20,7 +20,24 @@ def part1():
 
 
 def part2():
-    pass
+    lines = open('../../rust/data/inputs/04.txt', mode='r').readlines()
+    result = 0
+    h, w = len(lines), len(lines[0]) - 1
+    grid = {(y, x): lines[y][x] for y in range(h) for x in range(w)}
+
+    for i in range(0, h):
+        for j in range(0, w):
+            if grid[i, j] == 'A' and i > 0 and j > 0 and i < w - 1 and j < h - 1:
+                c1 = grid[i - 1, j - 1]
+                c2 = grid[i + 1, j + 1]
+                c3 = grid[i - 1, j + 1]
+                c4 = grid[i + 1, j - 1]
+
+                if ((c1 == 'M' and c2 == 'S') or (c1 == 'S' and c2 == 'M')) and (
+                        (c3 == 'M' and c4 == 'S') or (c3 == 'S' and c4 == 'M')):
+                    result += 1
+
+    return result
 
 
 if __name__ == '__main__':
