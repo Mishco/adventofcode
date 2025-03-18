@@ -140,3 +140,10 @@ Benchmark
 **Total: 1660.58ms**
 
 ### Python solution for 2024
+
+| 🎄 Day 🎄 |             💻 Part 1 💻             |             💻 Part 2 💻             |
+|:---------:|:------------------------------------:|:------------------------------------:|
+|  Day 01   | [Part-1](2024/python/day-01/main.py) | [Part-2](2024/python/day-01/main.py) |
+|  Day 02   | [Part-1](2024/python/day-02/main.py) | [Part-2](2024/python/day-02/main.py) |
+|  Day 03   | [Part-1](2024/python/day-03/main.py) | [Part-2](2024/python/day-03/main.py) |
+|  Day 04   | [Part-1](2024/python/day-04/main.py) | [Part-2](2024/python/day-04/main.py) |
