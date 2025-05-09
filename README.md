@@ -22,7 +22,7 @@ Table of contents
     * [python](#python-solution-for-2023)
 * [2024](#2024)
     * [rust](#rust-solution-for-2024)
-    * [python](#python-solution-for-2024) WIP
+    * [python](#python-solution-for-2024)
 
 <!--te-->
 
@@ -147,3 +147,4 @@ Benchmark
 |  Day 02   | [Part-1](2024/python/day-02/main.py) | [Part-2](2024/python/day-02/main.py) |
 |  Day 03   | [Part-1](2024/python/day-03/main.py) | [Part-2](2024/python/day-03/main.py) |
 |  Day 04   | [Part-1](2024/python/day-04/main.py) | [Part-2](2024/python/day-04/main.py) |
+|  Day 05   | [Part-1](2024/python/day-05/main.py) | [Part-2](2024/python/day-05/main.py) |
