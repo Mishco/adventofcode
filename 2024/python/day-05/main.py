@@ -20,7 +20,35 @@ def part1():
 
 
 def part2():
-    pass
+    lines = open('../../rust/data/inputs/05.txt', mode='r').read().split("\n\n")
+    rules = lines[0].split("\n")
+    updates = lines[1].split("\n")
+    result = 0
+    order = {}
+
+    for r in rules:
+        key, val = r.split("|")
+        if key in order:
+            order[key].append(val)
+        else:
+            order[key] = [val]
+
+    for i in updates:
+        update = i.split(",")
+        flag = True
+        j = 0
+        while j < len(update):
+            for k in range(j + 1, len(update)):
+                if update[k] not in order[update[j]]:
+                    update[k], update[j] = update[j], update[k]
+                    j -= 1
+                    flag = False
+                    break
+            j += 1
+        if not flag:
+            result += int(update[len(update) // 2])
+
+    return result
 
 
 if __name__ == '__main__':
