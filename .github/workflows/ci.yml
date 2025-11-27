@@ -8,7 +8,7 @@ env:
 jobs:
     ci-2024:
         runs-on: ubuntu-latest
-        name: Continuous Integration
+        name: Continuous Integration 2024
         steps:
             - uses: actions/checkout@v4
             - name: Set up cargo cache
@@ -32,9 +32,9 @@ jobs:
             - name: cargo fmt
               working-directory: ./2024/rust
               run: cargo fmt --check
-  ci-2025:
+    ci-2025:
       runs-on: ubuntu-latest
-      name: Continuous Integration
+      name: Continuous Integration 2025
       steps:
           # python ci for 2025 and check if files are formatted with black
           - uses: actions/checkout@v4
