@@ -1,12 +1,14 @@
 # --- Day 1:  ---
 
+
 def part1():
-    pass 
+    pass
+
 
 def part2():
     pass
 
+
 if __name__ == "__main__":
     part1()
     part2()
-    
