@@ -1,6 +1,5 @@
 # --- Day 1:  ---
 
-
 def part1():
     pass
 

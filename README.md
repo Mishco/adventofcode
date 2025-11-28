@@ -6,23 +6,25 @@
 1st December to 25th December every year since 2015. Each day has two puzzles that you can solve with your programming
 language of choice.
 
-Table of contents
-=================
+## Table of contents
 
 <!--ts-->
 
-* [2021](#2021)
-    * [python](#python-solution-for-2021) WIP
-    * [rust](#rust-solution-for-2021) WIP
-* [2022](#2022)
-    * [python](#python-solution-for-2023)
-    * Rust WIP
-* [2023](#2023)
-    * [rust](#rust-solution-for-2023)
-    * [python](#python-solution-for-2023)
-* [2024](#2024)
-    * [rust](#rust-solution-for-2024)
-    * [python](#python-solution-for-2024)
+- [Advent of code](#advent-of-code)
+  - [Table of contents](#table-of-contents)
+  - [2021](#2021)
+    - [Python solution for 2021](#python-solution-for-2021)
+    - [Rust solution for 2021](#rust-solution-for-2021)
+  - [2022](#2022)
+    - [Python solution for 2022](#python-solution-for-2022)
+  - [2023](#2023)
+    - [Rust solution for 2023](#rust-solution-for-2023)
+    - [Python solution for 2023](#python-solution-for-2023)
+  - [2024](#2024)
+    - [Rust solution for 2024](#rust-solution-for-2024)
+    - [Python solution for 2024](#python-solution-for-2024)
+  - [2025](#2025)
+    - [Python solution for 2025](#python-solution-for-2025)
 
 <!--te-->
 
@@ -148,3 +150,7 @@ Benchmark
 |  Day 03   | [Part-1](2024/python/day-03/main.py) | [Part-2](2024/python/day-03/main.py) |
 |  Day 04   | [Part-1](2024/python/day-04/main.py) | [Part-2](2024/python/day-04/main.py) |
 |  Day 05   | [Part-1](2024/python/day-05/main.py) | [Part-2](2024/python/day-05/main.py) |
+
+## 2025
+
+### Python solution for 2025
