@@ -2,8 +2,6 @@
 from pprint import pprint
 
 
-# TODO https://github.com/PodolskiBartosz/advent-of-code-2022/blob/main/day-8/main.py
-
 test = """30373
 25512
 65332
