@@ -107,7 +107,7 @@ if __name__ == '__main__':
 10 13 16 21 30 45"""
 
     # print(lines)
-    # with open('input.txt', 'r') as f:
+    # with open('day-01.txt', 'r') as f:
     #     pipe_system = [line.strip() for line in f]
     lines = [s for s in open('../inputs/day10.txt', 'r').read().split('\n') if s.strip()]
     print(lines)

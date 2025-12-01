@@ -5,7 +5,7 @@ def part1():
     starting_pos = 50
     zero_count = 0
     # lines = open('example.txt').readlines()
-    lines = open("input.txt", "r").readlines()
+    lines = open("../inputs/day-01.txt", "r").readlines()
 
     for line in lines:
         direction = line[0]
@@ -24,7 +24,7 @@ def part1():
 
 def part2():
     # lines = open('example.txt').readlines()
-    lines = open("input.txt", "r").readlines()
+    lines = open("../inputs/day-01.txt", "r").readlines()
     starting_pos = 50
     zero_count = 0
 
