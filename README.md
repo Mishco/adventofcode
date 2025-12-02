@@ -11,20 +11,20 @@ language of choice.
 <!--ts-->
 
 - [Advent of code](#advent-of-code)
-  - [Table of contents](#table-of-contents)
-  - [2021](#2021)
-    - [Python solution for 2021](#python-solution-for-2021)
-    - [Rust solution for 2021](#rust-solution-for-2021)
-  - [2022](#2022)
-    - [Python solution for 2022](#python-solution-for-2022)
-  - [2023](#2023)
-    - [Rust solution for 2023](#rust-solution-for-2023)
-    - [Python solution for 2023](#python-solution-for-2023)
-  - [2024](#2024)
-    - [Rust solution for 2024](#rust-solution-for-2024)
-    - [Python solution for 2024](#python-solution-for-2024)
-  - [2025](#2025)
-    - [Python solution for 2025](#python-solution-for-2025)
+    - [Table of contents](#table-of-contents)
+    - [2021](#2021)
+        - [Python solution for 2021](#python-solution-for-2021)
+        - [Rust solution for 2021](#rust-solution-for-2021)
+    - [2022](#2022)
+        - [Python solution for 2022](#python-solution-for-2022)
+    - [2023](#2023)
+        - [Rust solution for 2023](#rust-solution-for-2023)
+        - [Python solution for 2023](#python-solution-for-2023)
+    - [2024](#2024)
+        - [Rust solution for 2024](#rust-solution-for-2024)
+        - [Python solution for 2024](#python-solution-for-2024)
+    - [2025](#2025)
+        - [Python solution for 2025](#python-solution-for-2025)
 
 <!--te-->
 
@@ -154,3 +154,8 @@ Benchmark
 ## 2025
 
 ### Python solution for 2025
+
+| 🎄 Day 🎄 |             💻 Part 1 💻             |             💻 Part 2 💻             |
+|:---------:|:------------------------------------:|:------------------------------------:|
+|  Day 01   | [Part-1](2025/python/day-01/main.py) | [Part-2](2025/python/day-01/main.py) |
+|  Day 02   | [Part-1](2025/python/day-02/main.py) | [Part-2](2025/python/day-02/main.py) |
