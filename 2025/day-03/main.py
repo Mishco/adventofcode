@@ -1,14 +1,17 @@
 # --- Day 3: Lobby ---
 
+
 def part1():
     lines = """
     987654321111111
     811111111111119
     234234234234278
     818181911112111
-    """.split("\n")
+    """.split(
+        "\n"
+    )
 
-    lines = open('../inputs/day-03.txt', 'r').readlines()
+    lines = open("../inputs/day-03.txt", "r").readlines()
     total = 0
     for line in lines:
         # split to digits
@@ -25,13 +28,16 @@ def part1():
         total += max_joltage
     return total
 
+
 def part2():
     lines = """987654321111111
        811111111111119
        234234234234278
-       818181911112111""".split('\n')
+       818181911112111""".split(
+        "\n"
+    )
 
-    lines = open('../inputs/day-03.txt', 'r').readlines()
+    lines = open("../inputs/day-03.txt", "r").readlines()
     # total = 0
     max_digits = 12
     total = 0
@@ -58,9 +64,10 @@ def part2():
             result.append(max_digit)
             start = max_pos + 1
 
-        max_joltage = int(''.join(map(str, result)))
+        max_joltage = int("".join(map(str, result)))
         total += max_joltage
     return total
+
 
 if __name__ == "__main__":
     print("Part 1:", part1())
