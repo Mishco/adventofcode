@@ -1,5 +1,6 @@
 # --- Day 1: Not Quite Lisp ---
 
+
 def solve(lines: list[str]) -> int:
     ground_floor = 0
     for i in lines[0].strip():
@@ -39,6 +40,6 @@ def part2():
     print(f"part 2: {position}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     part1()
     part2()

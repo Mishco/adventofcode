@@ -1,9 +1,10 @@
 # --- Day 3: Perfectly Spherical Houses in a Vacuum ---
 
-north = '^'
-south = 'v'
-east = '>'
-west = '<'
+north = "^"
+south = "v"
+east = ">"
+west = "<"
+
 
 def solve_part_one(lines: list[str]):
     visited_map = {}
@@ -32,11 +33,11 @@ def solve_part_two(lines: list[str]):
 
 
 def part1():
-    assert solve_part_one(['>']) == 2
-    assert solve_part_one(['^>v<']) == 4
-    assert solve_part_one(['^v^v^v^v^v']) == 2
+    assert solve_part_one([">"]) == 2
+    assert solve_part_one(["^>v<"]) == 4
+    assert solve_part_one(["^v^v^v^v^v"]) == 2
 
-    lines = open('../inputs/day-03.txt').read().strip().splitlines()
+    lines = open("../inputs/day-03.txt").read().strip().splitlines()
     result = solve_part_one(lines)
     print(f"Part 1: {result}")
 
@@ -45,7 +46,7 @@ def part2():
     # lines = ['^v'] ### 3
     # lines = ['^>v<'] ### 5
     # lines = ['^v^v^v^v^v'] ### 11
-    lines = open('../inputs/day-03.txt').read().strip().splitlines()
+    lines = open("../inputs/day-03.txt").read().strip().splitlines()
     visited_map = {}
     santa_x, santa_y = 0, 0
     robo_x, robo_y = 0, 0
@@ -84,6 +85,6 @@ def part2():
     return total
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     part1()
     part2()

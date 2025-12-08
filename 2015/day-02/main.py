@@ -1,5 +1,6 @@
 # --- Day 2: I Was Told There Would Be No Math ---
 
+
 def solve_part_one(lines: list[str]):
     total = 0
     for line in lines:
@@ -38,7 +39,7 @@ def part1():
     lines = ["2x3x4", "1x1x10"]
     assert solve_part_one(lines) == 101  # 58 feet + 43 feet
 
-    lines = open('..\inputs\day-02.txt').readlines()
+    lines = open("..\inputs\day-02.txt").readlines()
     total = solve_part_one(lines)
     print(f"part1: {total}")
 
@@ -47,11 +48,11 @@ def part2():
     lines = ["2x3x4", "1x1x10"]
     assert solve_part_two(lines) == 48  # 34 feet + 14 feet
 
-    lines = open('..\inputs\day-02.txt').readlines()
+    lines = open("..\inputs\day-02.txt").readlines()
     total = solve_part_two(lines)
     print(f"part2: {total}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     part1()
     part2()
