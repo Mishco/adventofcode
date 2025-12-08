@@ -2,12 +2,9 @@
 
 
 def part1():
-    fresh_ingredients = 0
-    available_ingredients = 0
-
     lines = open("../inputs/day-05.txt", "r").read().strip()
     # lines = open('example.txt', 'r').read().strip()
-    # lines until first blank line are fresh ingredients
+
     fresh_section, available_section = lines.split("\n\n", 1)
 
     fresh_ranges = []
@@ -22,7 +19,6 @@ def part1():
         if line.strip()
     ]
 
-    # how many fresh ingredients are also in available ingredients
     count = 0
     for ingredient_id in available_ids:
         for start, end in fresh_ranges:
@@ -34,22 +30,24 @@ def part1():
 
 
 def part2():
-    # lines = open('example.txt', 'r').read().strip()
     lines = open("../inputs/day-05.txt", "r").read().strip()
+    # lines = open('example.txt', 'r').read().strip()
 
     fresh_section, _ = lines.split("\n\n", 1)
-    fresh_ids = set()
+
     ranges = []
     for line in fresh_section.strip().split("\n"):
         if "-" in line:
             start, end = map(int, line.split("-"))
             ranges.append((start, end))
 
+    # Sort and merge overlapping ranges
     ranges.sort()
     merged = []
 
     for start, end in ranges:
         if merged and start <= merged[-1][1] + 1:
+            # Overlap or adjacent - merge with previous range
             merged[-1] = (merged[-1][0], max(merged[-1][1], end))
         else:
             # No overlap - add as new range
