@@ -4,15 +4,16 @@ import re
 # 1444 nope
 # 1446 nope
 
+
 def ints(s):
-    return list(map(int, re.findall(r'\d+', s)))
+    return list(map(int, re.findall(r"\d+", s)))
 
 
-data = open('../inputs/day22.txt').read().strip().splitlines()
+data = open("../inputs/day22.txt").read().strip().splitlines()
 # data = open('sample').read().strip().splitlines()
 print(data)
 
-L = [c.split('~') for c in data]
+L = [c.split("~") for c in data]
 print(L)
 
 
@@ -27,9 +28,9 @@ class Brick:
 
     def is_below(self, other):
         return (
-                (self.x[0] <= other.x[1] and other.x[0] <= self.x[1])
-                and (self.y[0] <= other.y[1] and other.y[0] <= self.y[1])
-                and (self.z[1] <= other.z[0])
+            (self.x[0] <= other.x[1] and other.x[0] <= self.x[1])
+            and (self.y[0] <= other.y[1] and other.y[0] <= self.y[1])
+            and (self.z[1] <= other.z[0])
         )
 
     def drop(self, newz: int):
@@ -53,9 +54,9 @@ class Brick:
 bricks = []
 for line in data:
     if line:
-        start, end = line.split('~')
-        start = tuple(map(int, start.split(',')))
-        end = tuple(map(int, end.split(',')))
+        start, end = line.split("~")
+        start = tuple(map(int, start.split(",")))
+        end = tuple(map(int, end.split(",")))
         bricks.append(Brick(start, end))
 
 bricks.sort(key=lambda bbb: bbb.z[0])
@@ -78,7 +79,9 @@ for brick in bricks:
 remove_count = 0
 chain_count = 0
 for brick in bricks:
-    if len(brick.above_list) == 0 or all(len(other.below_list) > 1 for other in brick.above_list):
+    if len(brick.above_list) == 0 or all(
+        len(other.below_list) > 1 for other in brick.above_list
+    ):
         remove_count += 1
     else:
         supported = brick.collapse()

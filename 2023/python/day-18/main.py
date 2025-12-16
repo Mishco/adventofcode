@@ -5,6 +5,7 @@
 # Shoelace_formula https://en.wikipedia.org/wiki/Shoelace_formula
 # Pick's theorem https://en.wikipedia.org/wiki/Pick%27s_theorem
 
+
 def collect_points(data):
     pos = (0, 0)
     points = [pos]
@@ -51,10 +52,10 @@ def calc(input_lines, part2=False):
     return res
 
 
-if __name__ == '__main__':
-    lines = [x for x in open('../inputs/day18.txt').read().strip().split('\n')]
+if __name__ == "__main__":
+    lines = [x for x in open("../inputs/day18.txt").read().strip().split("\n")]
     DIRS = [(0, 1), (1, 0), (0, -1), (-1, 0)]
-    DNS = ['R', 'D', 'L', 'U']
+    DNS = ["R", "D", "L", "U"]
 
     print("part1: ", calc(lines))
     print("part2: ", calc(lines, True))

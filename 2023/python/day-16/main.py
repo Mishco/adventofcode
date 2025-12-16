@@ -29,8 +29,8 @@ def energized(entry: int, direction: complex) -> int:
     return len({x[0] for x in visited}) - 1
 
 
-if __name__ == '__main__':
-    ls = open("../inputs/day16.txt").read().strip().split('\n')
+if __name__ == "__main__":
+    ls = open("../inputs/day16.txt").read().strip().split("\n")
 
     board = {i + 1j * j: x for i, l in enumerate(ls) for j, x in enumerate(l)}
 

@@ -11,9 +11,9 @@ Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green
 games = {}
 # for each_line in test_input.splitlines():
 
-with (open('../inputs/day02.txt', mode='r') as f):
+with open("../inputs/day02.txt", mode="r") as f:
     for each_line in f:
-        if 'Game' in each_line:
+        if "Game" in each_line:
             game_id = each_line.split(":")[0]
             ls_ = each_line.split(":")[1]
             if game_id is not []:
@@ -29,21 +29,21 @@ new_games = collections.defaultdict(list)
 games.items()
 
 for game_id, game in games.items():
-    for item in game.split(';'):
-        for value in item.split(','):
-            if 'red' in value:
+    for item in game.split(";"):
+        for value in item.split(","):
+            if "red" in value:
                 # print(value)
-                red_values.append(int(value.strip().split(' ')[0]))
-            elif 'blue' in value:
+                red_values.append(int(value.strip().split(" ")[0]))
+            elif "blue" in value:
                 # print()
-                blue_values.append(int(value.strip().split(' ')[0]))
+                blue_values.append(int(value.strip().split(" ")[0]))
 
-            elif 'green' in value:
-                green_values.append(int(value.strip().split(' ')[0]))
+            elif "green" in value:
+                green_values.append(int(value.strip().split(" ")[0]))
 
-    new_games[game_id].append({'blue': blue_values})
-    new_games[game_id].append({'green': green_values})
-    new_games[game_id].append({'red': red_values})
+    new_games[game_id].append({"blue": blue_values})
+    new_games[game_id].append({"green": green_values})
+    new_games[game_id].append({"red": red_values})
     red_values = []
     blue_values = []
     green_values = []
@@ -66,17 +66,21 @@ for key, val in new_games.items():
     # print(val)
     max_blue, max_red, max_green = 0, 0, 0
     for invalue in val:
-        if 'blue' in invalue.keys():
-            max_blue = max(invalue['blue'])
-        elif 'green' in invalue.keys():
-            max_green = max(invalue['green'])
-        elif 'red' in invalue.keys():
-            max_red = max(invalue['red'])
+        if "blue" in invalue.keys():
+            max_blue = max(invalue["blue"])
+        elif "green" in invalue.keys():
+            max_green = max(invalue["green"])
+        elif "red" in invalue.keys():
+            max_red = max(invalue["red"])
 
     print(max_red, max_green, max_blue)
-    if minimal_red >= max_red and minimal_green >= max_green and minimal_blue >= max_blue:
+    if (
+        minimal_red >= max_red
+        and minimal_green >= max_green
+        and minimal_blue >= max_blue
+    ):
         print(f"{key} would be possible")
-        just_number = key.split(' ')[1]
+        just_number = key.split(" ")[1]
         sum += int(just_number)
 
 print()

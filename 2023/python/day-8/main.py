@@ -1,7 +1,7 @@
 import math
 import re
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     test = """
     """
@@ -19,7 +19,9 @@ if __name__ == '__main__':
     current_node = "AAA"
 
     # Get the left/right instructions from the user
-    lines = [i for i in open('../inputs/day08.txt', 'r').read().split('\n') if i.strip()]
+    lines = [
+        i for i in open("../inputs/day08.txt", "r").read().split("\n") if i.strip()
+    ]
 
     instructions = lines[0]
     network = {}
@@ -32,11 +34,11 @@ if __name__ == '__main__':
 
     res = []
     # starting point
-    pos = ['AAA']
+    pos = ["AAA"]
     for pos in pos:
         steps = 0
-        while pos != 'ZZZ':
-            if instructions[steps % len(instructions)] == 'L':
+        while pos != "ZZZ":
+            if instructions[steps % len(instructions)] == "L":
                 pos = network[pos][0]
             else:
                 pos = network[pos][1]
@@ -50,12 +52,12 @@ if __name__ == '__main__':
     for pos in pos:
         steps = 0
         while True:
-            if instructions[steps % len(instructions)] == 'L':
+            if instructions[steps % len(instructions)] == "L":
                 pos = network[pos][0]
             else:
                 pos = network[pos][1]
 
-            if pos.endswith('Z'):
+            if pos.endswith("Z"):
                 break
             steps += 1
         res.append(steps + 1)

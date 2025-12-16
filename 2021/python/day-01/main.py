@@ -48,7 +48,7 @@ def part2(input_str: str):
     step_size = slice_size - overlap
 
     for i in range(0, len(input_str.splitlines()) - slice_size + 1, step_size):
-        line_slice = input_str.splitlines()[i:i + slice_size]
+        line_slice = input_str.splitlines()[i : i + slice_size]
 
         sum_line = sum([int(line.strip()) for line in line_slice])
 
@@ -67,11 +67,11 @@ def part2(input_str: str):
     return counter
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     res = part1(test_input)
     assert res == 7
 
-    f = open('../inputs/2021-01.txt', mode='r').read()
+    f = open("../inputs/2021-01.txt", mode="r").read()
     res = part1(f)
     print(res)
 

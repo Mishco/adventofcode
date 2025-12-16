@@ -4,7 +4,7 @@ import z3
 
 
 def ints(s):
-    return list(map(int, re.findall(r'\d+', s)))
+    return list(map(int, re.findall(r"\d+", s)))
 
 
 with open("../inputs/day24.txt") as f:
@@ -13,9 +13,9 @@ with open("../inputs/day24.txt") as f:
 hail = []
 S = []
 for stone in content:
-    p, v = stone.split(' @ ')
-    p = [int(x) for x in p.split(', ')]
-    v = [int(x) for x in v.split(', ')]
+    p, v = stone.split(" @ ")
+    p = [int(x) for x in p.split(", ")]
+    v = [int(x) for x in v.split(", ")]
     hail.append((p, v))
     S.append((p[0], p[1], p[2], v[0], v[1], v[2]))
 
@@ -39,7 +39,7 @@ inside = 0
 test = (200000000000000, 400000000000000)
 
 for a, stone1 in enumerate(hail):
-    for b, stone2 in enumerate(hail[a + 1:], start=a + 1):
+    for b, stone2 in enumerate(hail[a + 1 :], start=a + 1):
         valid, x, y = intersect(stone1, stone2)
         if not valid:
             continue
@@ -57,10 +57,17 @@ for a, stone1 in enumerate(hail):
 # part1
 print(inside)
 
-x, y, z, vx, vy, vz = z3.Int('x'), z3.Int('y'), z3.Int('z'), z3.Int('vx'), z3.Int('vy'), z3.Int('vz')
+x, y, z, vx, vy, vz = (
+    z3.Int("x"),
+    z3.Int("y"),
+    z3.Int("z"),
+    z3.Int("vx"),
+    z3.Int("vy"),
+    z3.Int("vz"),
+)
 n = len(S)
 
-T = [z3.Int(f'T{i}') for i in range(n)]
+T = [z3.Int(f"T{i}") for i in range(n)]
 solver = z3.Solver()
 
 for i in range(n):

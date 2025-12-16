@@ -12,6 +12,8 @@ language of choice.
 
 - [Advent of code](#advent-of-code)
     - [Table of contents](#table-of-contents)
+    - [2015](#2015)
+        - [Python solution for 2015](#python-solution-for-2015)
     - [2021](#2021)
         - [Python solution for 2021](#python-solution-for-2021)
         - [Rust solution for 2021](#rust-solution-for-2021)
@@ -27,6 +29,19 @@ language of choice.
         - [Python solution for 2025](#python-solution-for-2025)
 
 <!--te-->
+
+## 2015
+
+### Python solution for 2015
+
+| 🎄 Day 🎄 |           💻 Part 1 💻           |           💻 Part 2 💻           |
+|:---------:|:--------------------------------:|:--------------------------------:|
+|  Day 01   | [Part-1](2015/day-01/main.py) | [Part-2](2015/day-01/main.py) |
+|  Day 02   | [Part-1](2015/day-02/main.py) | [Part-2](2015/day-02/main.py) |
+|  Day 03   | [Part-1](2015/day-03/main.py) | [Part-2](2015/day-03/main.py) |
+|  Day 04   | [Part-1](2015/day-04/main.py) | [Part-2](2015/day-04/main.py) |
+|  Day 05   | [Part-1](2015/day-05/main.py) | [Part-2](2015/day-05/main.py) |
+|  Day 06   | [Part-1](2015/day-06/main.py) | [Part-2](2015/day-06/main.py) |
 
 ## 2021
 
@@ -155,7 +170,17 @@ Benchmark
 
 ### Python solution for 2025
 
-| 🎄 Day 🎄 |             💻 Part 1 💻             |             💻 Part 2 💻             |
-|:---------:|:------------------------------------:|:------------------------------------:|
-|  Day 01   | [Part-1](2025/python/day-01/main.py) | [Part-2](2025/python/day-01/main.py) |
-|  Day 02   | [Part-1](2025/python/day-02/main.py) | [Part-2](2025/python/day-02/main.py) |
+| 🎄 Day 🎄 |           💻 Part 1 💻           |           💻 Part 2 💻           |
+|:---------:|:--------------------------------:|:--------------------------------:|
+|  Day 01   | [Part-1](2025/day-01/main.py) | [Part-2](2025/day-01/main.py) |
+|  Day 02   | [Part-1](2025/day-02/main.py) | [Part-2](2025/day-02/main.py) |
+|  Day 03   | [Part-1](2025/day-03/main.py) | [Part-2](2025/day-03/main.py) |
+|  Day 04   | [Part-1](2025/day-04/main.py) | [Part-2](2025/day-04/main.py) |
+|  Day 05   | [Part-1](2025/day-05/main.py) | [Part-2](2025/day-05/main.py) |
+|  Day 06   | [Part-1](2025/day-06/main.py) | [Part-2](2025/day-06/main.py) |
+|  Day 07   | [Part-1](2025/day-07/main.py) | [Part-2](2025/day-07/main.py) |
+|  Day 08   | [Part-1](2025/day-08/main.py) | [Part-2](2025/day-08/main.py) |
+|  Day 09   | [Part-1](2025/day-09/main.py) | [Part-2](2025/day-09/main.py) |
+|  Day 10   | [Part-1](2025/day-10/main.py) | [Part-2](2025/day-10/main.py) |
+|  Day 11   | [Part-1](2025/day-11/main.py) | [Part-2](2025/day-11/main.py) |
+|  Day 12   | [Part-1](2025/day-12/main.py) | [Part-2](2025/day-12/main.py) |

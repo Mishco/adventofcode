@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-ll = open('../inputs/day15.txt').read().strip().split(',')
+ll = open("../inputs/day15.txt").read().strip().split(",")
 p1 = 0
 p2 = 0
 
@@ -32,27 +32,28 @@ for box, lns in enumerate(lenses):
         p2 += (box + 1) * (i + 1) * lenslengths[box][lens]
 print(p1, p2)
 
+
 def hash_(str):
-  h = 0
-  for c in str:
-    h += ord(c)
-    h = (17*h)%256
-  return h
+    h = 0
+    for c in str:
+        h += ord(c)
+        h = (17 * h) % 256
+    return h
 
-if __name__ == '__main__':
 
-    data = open('../inputs/day15.txt').read().strip().split(',')
+if __name__ == "__main__":
 
-    print('part1: ', sum(hash_(d) for d in data))
+    data = open("../inputs/day15.txt").read().strip().split(",")
+
+    print("part1: ", sum(hash_(d) for d in data))
 
     boxes = defaultdict(dict)
 
     for cmd in data:
-        if '-' in cmd:
+        if "-" in cmd:
             label = cmd[:-1]
             h = hash_(label)
             boxes[hash_(label)].pop(label, None)
         else:
-            label, i = cmd.split('=')
+            label, i = cmd.split("=")
             boxes[hash_(label)][label] = int(i)
-

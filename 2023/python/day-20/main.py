@@ -5,7 +5,7 @@ from functools import reduce
 
 
 def ints(s):
-    return list(map(int, re.findall(r'\d+', s)))
+    return list(map(int, re.findall(r"\d+", s)))
 
 
 # Flip-flop modules (prefix %) are either on or off;
@@ -94,7 +94,7 @@ class Broadcaster(Module):
 
 # data = open('sample').read().strip().splitlines()
 # print(data)
-data = open('../inputs/day20.txt').read().strip().splitlines()
+data = open("../inputs/day20.txt").read().strip().splitlines()
 # = 0
 count_item = 0
 
@@ -106,16 +106,16 @@ flipflops = defaultdict(int)
 conjuctions = defaultdict(dict)
 rx = None
 for line in data:
-    source, _, *dest = line.replace(',', '').split()
-    source_name = source.lstrip('%&')
+    source, _, *dest = line.replace(",", "").split()
+    source_name = source.lstrip("%&")
 
-    operand, source = (source[0], source[1:]) if source[0] in '%&' else ('', source)
+    operand, source = (source[0], source[1:]) if source[0] in "%&" else ("", source)
 
     all_modules[source] = operand, dest
 
     for d in dest:
         conjuctions[d][source] = 0
-        if 'rx' in dest:
+        if "rx" in dest:
             rx = source
 
 rx_ins = {i: 0 for i in conjuctions[rx]}
@@ -128,7 +128,7 @@ for i in range(10000000):
     if all(rx_ins.values()):
         break
     presses += 1
-    queue = [(None, 'broadcaster', 0)]
+    queue = [(None, "broadcaster", 0)]
     while queue:
         source, module, pulse_in = queue.pop(0)
         counts[pulse_in] += 1
@@ -138,19 +138,21 @@ for i in range(10000000):
 
         type_module, next_module = all_modules[module]
         match type_module, pulse_in:
-            case '', _:
+            case "", _:
                 pulse_out = pulse_in
-            case '%', 0:
+            case "%", 0:
                 pulse_out = flipflops[module] = not flipflops[module]
-            case '&', _:
+            case "&", _:
                 conjuctions[module][source] = pulse_in
                 pulse_out = not all(conjuctions[module].values())
 
-                if 'rx' in next_module:
+                if "rx" in next_module:
                     # for key, val in conjuctions[module].items():
                     #     if val:
                     #         rx_ins[key] = presses
-                    rx_ins.update({k: presses for k, v in conjuctions[module].items() if v})
+                    rx_ins.update(
+                        {k: presses for k, v in conjuctions[module].items() if v}
+                    )
             case _, _:
                 continue
 

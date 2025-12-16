@@ -11,9 +11,9 @@ Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11
 
 total_part_1 = 0
 
-content = open('../inputs/day04.txt').read()
+content = open("../inputs/day04.txt").read()
 for line in content.splitlines():
-    cards = line.split('|')
+    cards = line.split("|")
     winning = cards[0].split()[2:]
     others = cards[1].split()
     matches = set(winning) & set(others)
@@ -26,7 +26,7 @@ print(total_part_1)  # 24706
 lines = content.splitlines()
 cards = [1] * len(lines)
 for idx, ln in enumerate(lines):
-    x, y = map(str.split, ln.split('|'))
+    x, y = map(str.split, ln.split("|"))
     count_of_same = len(set(x) & set(y))
     for j in range(idx + 1, min(idx + 1 + count_of_same, len(lines))):
         cards[j] += cards[idx]

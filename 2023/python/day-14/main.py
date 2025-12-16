@@ -1,9 +1,4 @@
-directions = {
-    "up": (-1, 0),
-    "down": (1, 0),
-    "left": (0, -1),
-    "right": (0, 1)
-}
+directions = {"up": (-1, 0), "down": (1, 0), "left": (0, -1), "right": (0, 1)}
 
 
 # Define a function to print the board
@@ -19,7 +14,7 @@ def is_valid_position(board, row, col):
 def rotate(grid):
     rows = len(grid)
     cols = len(grid[0])
-    NG = [['?' for _ in range(rows)] for _ in range(cols)]
+    NG = [["?" for _ in range(rows)] for _ in range(cols)]
     for r in range(rows):
         for c in range(cols):
             NG[c][rows - 1 - r] = grid[r][c]
@@ -32,20 +27,17 @@ def roll(grid):
     for c in range(C):
         for _ in range(R):
             for r in range(R):
-                if grid[r][c] == 'O' and r > 0 and grid[r - 1][c] == '.':
-                    grid[r][c] = '.'
-                    grid[r - 1][c] = 'O'
+                if grid[r][c] == "O" and r > 0 and grid[r - 1][c] == ".":
+                    grid[r][c] = "."
+                    grid[r - 1][c] = "O"
     return grid
 
 
-def tilt_platform(board, directionslist=['up', 'left', 'down', 'right'], max_cycles=1000000000):
+def tilt_platform(
+    board, directionslist=["up", "left", "down", "right"], max_cycles=1000000000
+):
     # Define the row and column offsets for each direction
-    directions = {
-        "up": (-1, 0),
-        "down": (1, 0),
-        "left": (0, -1),
-        "right": (0, 1)
-    }
+    directions = {"up": (-1, 0), "down": (1, 0), "left": (0, -1), "right": (0, 1)}
 
     # Loop through all the rocks on the board
     cycles = 0
@@ -59,7 +51,10 @@ def tilt_platform(board, directionslist=['up', 'left', 'down', 'right'], max_cyc
                         row_offset, col_offset = directions[direction]
                         new_row = row + row_offset
                         new_col = col + col_offset
-                        if is_valid_position(board, new_row, new_col) and board[new_row][new_col] == ".":
+                        if (
+                            is_valid_position(board, new_row, new_col)
+                            and board[new_row][new_col] == "."
+                        ):
                             board[row][col] = "."
                             board[new_row][new_col] = "O"
                             row, col = new_row, new_col
@@ -104,20 +99,26 @@ def titl_platform_part2(board):
 
     total_rows = len(board)
     north_load = sum(
-        [(total_rows - row) for row in range(len(board)) for col in range(len(board[row])) if board[row][col] == "O"])
+        [
+            (total_rows - row)
+            for row in range(len(board))
+            for col in range(len(board[row]))
+            if board[row][col] == "O"
+        ]
+    )
 
     return north_load
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # The total load is the sum of the load caused by all the rounded rocks.
     # In this example, the total load is 136.
     #
     # Tilt the platform so that the rounded rocks all roll north.
     # Afterward, what is the total load on the north support beams?
 
-    data = open('../inputs/day14.txt').read().strip()
-    L = data.split('\n')
+    data = open("../inputs/day14.txt").read().strip()
+    L = data.split("\n")
     board = [[c for c in row] for row in L]
 
     print("part1: ", tilt_platform(board, directionslist=["up"]))  # part1

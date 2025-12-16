@@ -4,6 +4,7 @@ import numpy as np
 
 import re
 
+
 def ints(s: str) -> typing.List[int]:  # thanks mserrano
     return list(map(int, re.findall(r"(?:(?<!\d)-)?\d+", s)))
 
@@ -27,9 +28,7 @@ def part1(test_in):
     pass
 
 
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     test_in = """7,4,9,5,11,17,23,2,0,14,21,24,10,16,13,6,15,25,12,22,18,20,8,19,3,26,1
 
 22 13 17 11  0
@@ -52,4 +51,3 @@ if __name__ == '__main__':
 """
 
     assert part1(test_in) == 4512
-

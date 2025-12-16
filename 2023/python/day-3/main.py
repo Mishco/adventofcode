@@ -1,5 +1,5 @@
 """
-In this schematic, two numbers are not part numbers because they are not adjacent to a symbol: 
+In this schematic, two numbers are not part numbers because they are not adjacent to a symbol:
 114 (top right) and 58 (middle right).
  Every other number is adjacent to a symbol and so is a part number; their sum is 4361.
 """
@@ -29,7 +29,7 @@ part_number = []
 total = 0
 symbols = ["*", "#", "+", "$", "%"]
 
-with (open('../inputs/day03.txt', mode='r') as f):
+with open("../inputs/day03.txt", mode="r") as f:
     for rows in f:
         schematic.append(rows)
 lists = []
@@ -37,7 +37,7 @@ special_list = []
 gears_list = []
 
 # Split the schematic into rows
-rows = schematic #.split()
+rows = schematic  # .split()
 gears = 0
 # Initialize the sum of part numbers to 0
 part_sum = 0
@@ -55,12 +55,29 @@ for i in range(len(rows)):
                 for y in range(-1, 2):
                     if x == 0 and y == 0:
                         continue
-                    if i + x < 0 or i + x >= len(rows) or j + y < 0 or j + y >= len(rows[i]):
+                    if (
+                        i + x < 0
+                        or i + x >= len(rows)
+                        or j + y < 0
+                        or j + y >= len(rows[i])
+                    ):
                         continue
-                    if rows[i + x][j + y] in ['#', '+', '$', '@', '%', '/', '-', '=', '!', '^', '&']:
+                    if rows[i + x][j + y] in [
+                        "#",
+                        "+",
+                        "$",
+                        "@",
+                        "%",
+                        "/",
+                        "-",
+                        "=",
+                        "!",
+                        "^",
+                        "&",
+                    ]:
                         adjacent = True
                         break
-                    if rows[i + x][j + y] in ['*']:
+                    if rows[i + x][j + y] in ["*"]:
                         gear_adjacent = True
                         break
                 if adjacent or gear_adjacent:
@@ -76,31 +93,43 @@ for i in range(len(rows)):
                 while start >= 0 and rows[i][start].isdigit():
                     start -= 1
                 # Add the part number to the sum
-                lists.append(int(rows[i][start + 1:end]))
-                part_sum += int(rows[i][start + 1:end])
+                lists.append(int(rows[i][start + 1 : end]))
+                part_sum += int(rows[i][start + 1 : end])
 
                 if gear_adjacent:
-                    special_list.append(rows[i][start + 1:end])
+                    special_list.append(rows[i][start + 1 : end])
                     # print(i, start + 1, end)
-                    gears_list.append({
-                        'i': i,
-                        'start': start + 1,
-                        'end': end,
-                        'value': rows[i][start + 1:end]
-                    })
+                    gears_list.append(
+                        {
+                            "i": i,
+                            "start": start + 1,
+                            "end": end,
+                            "value": rows[i][start + 1 : end],
+                        }
+                    )
                     if len(special_list) >= 2:
-                        if special_list[0].endswith('*') or special_list[1].endswith('*'):
+                        if special_list[0].endswith("*") or special_list[1].endswith(
+                            "*"
+                        ):
                             part_sum += sum(special_list)
                             special_list = []
                             gear_adjacent = False  # founded and remove
                         else:
-                            first_gear = int(special_list[0].replace('.', ''))
+                            first_gear = int(special_list[0].replace(".", ""))
                             second_gear = int(special_list[1])
 
-                            first_info = next(item for item in gears_list if item["value"] == str(first_gear))
-                            second_info = next(item for item in gears_list if item["value"] == str(second_gear))
+                            first_info = next(
+                                item
+                                for item in gears_list
+                                if item["value"] == str(first_gear)
+                            )
+                            second_info = next(
+                                item
+                                for item in gears_list
+                                if item["value"] == str(second_gear)
+                            )
 
-                            if abs(first_info['i']-second_info['i']) >2:
+                            if abs(first_info["i"] - second_info["i"]) > 2:
                                 # remove first and sum
                                 special_list = []
                                 part_sum += first_gear

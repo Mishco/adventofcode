@@ -30,33 +30,33 @@ $ ls
 
 def calc(data, debug=False):
     sizes = defaultdict(int)
-    ancestry = ['/']  # stack of parents
+    ancestry = ["/"]  # stack of parents
 
     for line in data:
         # cmds_ls = re.findall('^\$', line)
         match line.split():
-            case ['$', 'cd', '/']:
-                ancestry = ['/']
-            case ['$', 'cd', '..']:
+            case ["$", "cd", "/"]:
+                ancestry = ["/"]
+            case ["$", "cd", ".."]:
                 ancestry.pop()
-            case ['$', 'cd', child]:
-                ancestry.append(f'{ancestry[-1]}{child}/')
-            case ['$', 'ls']:
+            case ["$", "cd", child]:
+                ancestry.append(f"{ancestry[-1]}{child}/")
+            case ["$", "ls"]:
                 pass
-            case ['dir', child]:
+            case ["dir", child]:
                 pass
             case [size, file]:
                 for path in ancestry:
                     sizes[path] += int(size)
         if debug:
-            print(f'{line: <20} {ancestry}')
+            print(f"{line: <20} {ancestry}")
 
     sum = 0
     for k, s in sizes.items():
         if s <= 100000:
             sum += s
 
-    to_delete = sizes['/'] - 40000000
+    to_delete = sizes["/"] - 40000000
     minimal_val = min(size for size in sizes.values() if size >= to_delete)
     return sum, sizes, minimal_val
 
@@ -69,10 +69,10 @@ def tests():
     assert c == 24933642
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     tests()
 
-    f = open('../inputs/day07.txt', 'r').read().splitlines()
+    f = open("../inputs/day07.txt", "r").read().splitlines()
 
     part1, _, part2 = calc(f, debug=False)
 

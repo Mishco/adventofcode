@@ -2,22 +2,22 @@
 
 import sys
 
-sys.setrecursionlimit(10 ** 6)
+sys.setrecursionlimit(10**6)
 directions_deltas = {
-    'up': (-1, 0),
-    'right': (0, 1),
-    'down': (1, 0),
-    'left': (0, -1),
+    "up": (-1, 0),
+    "right": (0, 1),
+    "down": (1, 0),
+    "left": (0, -1),
 }
-directions = ['up', 'right', 'down', 'left']
+directions = ["up", "right", "down", "left"]
 
 
-def is_obstacle_ahead(position, direction, rows:int, cols:int, G):
-    delta  = directions_deltas[direction]
+def is_obstacle_ahead(position, direction, rows: int, cols: int, G):
+    delta = directions_deltas[direction]
     new_position = (position[0] + delta[0], position[1] + delta[1])
     row, col = new_position
     if 0 <= row < rows and 0 <= col < cols:
-        return G[row][col] == '#'
+        return G[row][col] == "#"
     return True
 
 
@@ -45,31 +45,31 @@ def move_forward(position, direction):
 
 
 def part1():
-    with open('../../rust/data/inputs/06.txt', mode='r') as f:
+    with open("../../rust/data/inputs/06.txt", mode="r") as f:
         data = f.read().strip()
 
-    G = data.split('\n')
+    G = data.split("\n")
     rows = len(G)
     cols = len(G[0])
     for row in range(rows):
         for col in range(cols):
-            if G[row][col] == '^':
+            if G[row][col] == "^":
                 start_row, start_col = row, col
 
     guard_position = (start_row, start_col)
-    guard_direction = 'up'
+    guard_direction = "up"
     visited = set()
     # Track visited states (position + direction) to detect cycles
     visited_states = set()
-    
+
     while True:
         # Check if we've been in this exact state before
         state = (guard_position, guard_direction)
         if state in visited_states:
             break
-            
+
         visited_states.add(state)
-        
+
         if is_obstacle_ahead(guard_position, guard_direction, rows, cols, G):
             guard_direction = turn_right(guard_direction)
         else:
@@ -119,6 +119,6 @@ def part2():
     # return result
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(part1())
     print(part2())

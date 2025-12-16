@@ -52,19 +52,19 @@ def ints(s: str) -> list[int]:
     >>> ints("seeds: 3640772818 104094365 1236480411 161072229 376099792")
     [3640772818, 104094365, 1236480411, 161072229, 376099792]
     """
-    return [int(m) for m in re.findall(r'-?[\d]+', s)]
+    return [int(m) for m in re.findall(r"-?[\d]+", s)]
 
 
-data = open('../inputs/day05.txt', 'r').read()
-parts = data.split('\n\n')
+data = open("../inputs/day05.txt", "r").read()
+parts = data.split("\n\n")
 seed_names, map_sets = parts[0], parts[1:]
 seeds = ints(parts[0])
-min_location = 2 ** 63 - 1  # max int val
+min_location = 2**63 - 1  # max int val
 
 for seed in seeds:
     location = seed
     for map_set in map_sets:
-        for line in map_set.split('\n')[1:]:
+        for line in map_set.split("\n")[1:]:
             dst_start, src_start, rng = ints(line)
             if location in range(src_start, src_start + rng):
                 location = dst_start + (location - src_start)
@@ -80,7 +80,7 @@ nexts = ints(content[0])
 unmapped = []
 
 cleaned_content = content[2:]
-cleaned_content = [i for i in cleaned_content if i != '']
+cleaned_content = [i for i in cleaned_content if i != ""]
 
 for line in cleaned_content:
     numbers = ints(line)
@@ -94,7 +94,10 @@ for line in cleaned_content:
         current_destination, current_source, range_map = numbers[:3]
 
         while len(currents) > 0:
-            if currents[0] < current_source + range_map and currents[0] + currents[1] > current_source:
+            if (
+                currents[0] < current_source + range_map
+                and currents[0] + currents[1] > current_source
+            ):
                 to_map_start = max(currents[0], current_source)
                 to_map_end = min(current_source + range_map, currents[0] + currents[1])
                 to_map_range = to_map_end - to_map_start

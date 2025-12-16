@@ -9,12 +9,14 @@ pairs = """2-4,6-8
 
 total_sections = 0
 # overlaps = 0
-content = open('../inputs/day04.txt').read()
+content = open("../inputs/day04.txt").read()
 
 overlaps = 0
 overlaps2 = 0
 for line in content.splitlines():
-    first_pair, second_pair = [list(map(int, pair.split('-'))) for pair in line.split(",")]
+    first_pair, second_pair = [
+        list(map(int, pair.split("-"))) for pair in line.split(",")
+    ]
     if first_pair[0] != second_pair[0]:
         if first_pair[0] > second_pair[0]:
             inside_range, outside_range = first_pair, second_pair

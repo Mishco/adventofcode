@@ -2,19 +2,20 @@
 import heapq
 import networkx as nx
 
+
 # Find the single giant loop starting at S.
 # How many steps along the loop does it take to get from the starting position to the point farthest from the starting position?
 def get_neighbors(tile):
     neighbors = []
     row, col = tile
-    if col+1 < len(pipe_system[row]) and pipe_system[row][col+1] == '-':
-        neighbors.append((row, col+3))
-    if row+1 < len(pipe_system) and pipe_system[row+1][col] == '|':
-        neighbors.append((row+2, col))
-    if col-1 >= 0 and pipe_system[row][col-1] == '-':
-        neighbors.append((row, col-3))
-    if row-1 >= 0 and pipe_system[row-1][col] == '|':
-        neighbors.append((row-2, col))
+    if col + 1 < len(pipe_system[row]) and pipe_system[row][col + 1] == "-":
+        neighbors.append((row, col + 3))
+    if row + 1 < len(pipe_system) and pipe_system[row + 1][col] == "|":
+        neighbors.append((row + 2, col))
+    if col - 1 >= 0 and pipe_system[row][col - 1] == "-":
+        neighbors.append((row, col - 3))
+    if row - 1 >= 0 and pipe_system[row - 1][col] == "|":
+        neighbors.append((row - 2, col))
     return neighbors if neighbors else []
 
 
@@ -53,6 +54,7 @@ def get_neighbors(tile):
 
 from collections import deque
 
+
 def find_path(grid, start, end):
     queue = deque([start])
     visited = set([start])
@@ -72,20 +74,22 @@ def find_path(grid, start, end):
 
     return "No path found"
 
+
 def get_neighbors(grid, pos):
     row, col = pos
     neighbors = []
 
-    if row > 0 and grid[row-1][col] in "|FL":
-        neighbors.append((row-1, col))
-    if row < len(grid)-1 and grid[row+1][col] in "|FJ":
-        neighbors.append((row+1, col))
-    if col > 0 and grid[row][col-1] in "-FJ":
-        neighbors.append((row, col-1))
-    if col < len(grid[0])-1 and grid[row][col+1] in "-FL":
-        neighbors.append((row, col+1))
+    if row > 0 and grid[row - 1][col] in "|FL":
+        neighbors.append((row - 1, col))
+    if row < len(grid) - 1 and grid[row + 1][col] in "|FJ":
+        neighbors.append((row + 1, col))
+    if col > 0 and grid[row][col - 1] in "-FJ":
+        neighbors.append((row, col - 1))
+    if col < len(grid[0]) - 1 and grid[row][col + 1] in "-FL":
+        neighbors.append((row, col + 1))
 
     return neighbors
+
 
 def construct_path(path, start, end):
     curr_pos = end
@@ -101,7 +105,7 @@ def construct_path(path, start, end):
     return path_taken
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ttt = """0 3 6 9 12 15
 1 3 6 10 15 21
 10 13 16 21 30 45"""
@@ -109,23 +113,24 @@ if __name__ == '__main__':
     # print(lines)
     # with open('day-01.txt', 'r') as f:
     #     pipe_system = [line.strip() for line in f]
-    lines = [s for s in open('../inputs/day10.txt', 'r').read().split('\n') if s.strip()]
+    lines = [
+        s for s in open("../inputs/day10.txt", "r").read().split("\n") if s.strip()
+    ]
     print(lines)
 
-    pipe_system=lines
+    pipe_system = lines
     # Find the farthest point from the starting position
     farthest_point = max([int(c) for row in pipe_system for c in row if c.isdigit()])
 
-    idx=0
+    idx = 0
     for row in pipe_system:
         for c in row:
-            if c == 'S':
-                start_point=(idx, row.index(c))
-        idx+=1
+            if c == "S":
+                start_point = (idx, row.index(c))
+        idx += 1
 
     height = len(pipe_system)
     width = len(pipe_system[0])
-
 
     ax = -1
     ay = -1
@@ -225,7 +230,7 @@ if __name__ == '__main__':
 
     position = [start[0], start[1] - 1]
     last_move = [0, -1]
-    while lines[position[1]][position[0]] != 'S':
+    while lines[position[1]][position[0]] != "S":
         poly.append([*position])
         tile = lines[position[1]][position[0]]
         if tile == "|":
@@ -293,7 +298,7 @@ if __name__ == '__main__':
 
     print("took %s seconds" % (time.time() - start_time))
 
-        # print(current_tile)
+    # print(current_tile)
     # Print the result
     print(steps)
 
@@ -319,8 +324,8 @@ if __name__ == '__main__':
                     x, y = xi, yi
                     break
 
-        assert (x != None)
-        assert (y != None)
+        assert x != None
+        assert y != None
 
         q = Queue()
 
@@ -332,7 +337,7 @@ if __name__ == '__main__':
                         q.put((1, (x + dx, y + dy)))
 
         dists = {(x, y): 0}
-        assert (q.qsize() == 2)
+        assert q.qsize() == 2
 
         while not q.empty():
             d, (x, y) = q.get()

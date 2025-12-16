@@ -5,15 +5,15 @@ sum = int(0)
 
 def get_number_from_word(word):
     switch = {
-        'one': 1,
-        'two': 2,
-        'three': 3,
-        'four': 4,
-        'five': 5,
-        'six': 6,
-        'seven': 7,
-        'eight': 8,
-        'nine': 9
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
     }
     return switch.get(word, "Invalid day01.txt")
 
@@ -29,7 +29,7 @@ zoneight234
 """
 # In this example, the calibration values are 29, 83, 13, 24, 42, 14, and 76. Adding these together produces 281.
 
-with (open('../inputs/day01.txt', mode='r') as f):
+with open("../inputs/day01.txt", mode="r") as f:
     for line in f:
         # line = '1sevenninesix1\n'
         # line = '5bszzkpcdxqkvkf7tgcone2'
@@ -49,10 +49,10 @@ with (open('../inputs/day01.txt', mode='r') as f):
         m = re.search(r"\d", line)
         m2 = re.search(r"\d", line[::-1])
 
-        firs_real_digit = re.findall('\d', line)[:1]
-        last_real_digit = re.findall('\d', line[::-1])[:1]
+        firs_real_digit = re.findall("\d", line)[:1]
+        last_real_digit = re.findall("\d", line[::-1])[:1]
 
-        matches = re.finditer(r'\d', line)
+        matches = re.finditer(r"\d", line)
         indices = [match.start() for match in matches]
 
         first_digit_indx = line.index(firs_real_digit[0]) if firs_real_digit else 0
@@ -77,36 +77,60 @@ with (open('../inputs/day01.txt', mode='r') as f):
             last_digit = line[::-1][m2.start()]
             act_val = str(first_digit) + str(last_digit)
 
-        elif m and (first_digit_indx <= re_digits_words_first_index) and (m2_digit_indx >= re_digits_words_last_index):
+        elif (
+            m
+            and (first_digit_indx <= re_digits_words_first_index)
+            and (m2_digit_indx >= re_digits_words_last_index)
+        ):
             first_digit = line[m.start()]
             last_digit = line[::-1][m2.start()]
             act_val = str(first_digit) + str(last_digit)
 
-        elif m2 and (first_digit_indx <= re_digits_words_first_index) and (m2_digit_indx >= re_digits_words_last_index):
+        elif (
+            m2
+            and (first_digit_indx <= re_digits_words_first_index)
+            and (m2_digit_indx >= re_digits_words_last_index)
+        ):
             first_digit = line[m.start()]
             last_digit = line[::-1][m2.start()]
             act_val = str(first_digit) + str(last_digit)
 
-        elif m and re_digits_words_last and (first_digit_indx <= re_digits_words_first_index) and (
-                m2_digit_indx <= re_digits_words_last_index):
+        elif (
+            m
+            and re_digits_words_last
+            and (first_digit_indx <= re_digits_words_first_index)
+            and (m2_digit_indx <= re_digits_words_last_index)
+        ):
             first_digit = line[m.start()]
             words_digit_second = get_number_from_word(re_digits_words_last[0])
             act_val = str(first_digit) + str(words_digit_second)
 
-        elif re_digits_words_first and m2 and (m2_digit_indx >= re_digits_words_last_index) and (
-                first_digit_indx <= re_digits_words_first_index):
+        elif (
+            re_digits_words_first
+            and m2
+            and (m2_digit_indx >= re_digits_words_last_index)
+            and (first_digit_indx <= re_digits_words_first_index)
+        ):
             words_digit_first = get_number_from_word(re_digits_words_first[0].strip())
             last_digit = line[::-1][m2.start()]
             act_val = str(words_digit_first) + str(last_digit)
 
-        elif m2_digit_indx == first_digit_indx and re_digits_words_first and m2 and (
-                m2_digit_indx >= re_digits_words_last_index):
+        elif (
+            m2_digit_indx == first_digit_indx
+            and re_digits_words_first
+            and m2
+            and (m2_digit_indx >= re_digits_words_last_index)
+        ):
             words_digit_first = get_number_from_word(re_digits_words_first[0].strip())
             last_digit = line[::-1][m2.start()]
             act_val = str(words_digit_first) + str(last_digit)
 
-        elif re_digits_words_first and m2 and (m2_digit_indx >= re_digits_words_last_index) and (
-                first_digit_indx > re_digits_words_first_index):
+        elif (
+            re_digits_words_first
+            and m2
+            and (m2_digit_indx >= re_digits_words_last_index)
+            and (first_digit_indx > re_digits_words_first_index)
+        ):
             words_digit_first = get_number_from_word(re_digits_words_first[0].strip())
             last_digit = line[::-1][m2.start()]
             act_val = str(words_digit_first) + str(last_digit)

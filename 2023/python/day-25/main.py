@@ -5,16 +5,16 @@ import networkx as nx
 
 
 def ints(s):
-    return list(map(int, re.findall(r'\d+', s)))
+    return list(map(int, re.findall(r"\d+", s)))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     G = nx.Graph()
 
-    data = open('../inputs/day25.txt').read().strip()
+    data = open("../inputs/day25.txt").read().strip()
     # data = open('sample').read().strip() # should be 54
 
-    lines = data.split('\n')
+    lines = data.split("\n")
 
     for line in lines:
         v, adj = line.split(": ")

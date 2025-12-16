@@ -2,7 +2,9 @@ import re
 import sys
 import os
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'utils')))
+sys.path.insert(
+    0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "utils"))
+)
 from benchmark import benchmark
 
 
@@ -10,7 +12,7 @@ from benchmark import benchmark
 def part1():
     pattern = r"mul\((\d+),\s*(\d+)\)"
     total = 0
-    with open('../../rust/data/inputs/03.txt', mode='r') as f:
+    with open("../../rust/data/inputs/03.txt", mode="r") as f:
         lines = f.read().splitlines()
 
         for line in lines:
@@ -18,7 +20,7 @@ def part1():
                 first = int(item[1])
                 second = int(item[2])
 
-                total += (first * second)
+                total += first * second
     return total
 
 
@@ -28,7 +30,7 @@ def part2():
     is_enabled = True
     result = 0
 
-    with open('../../rust/data/inputs/03.txt', mode='r') as f:
+    with open("../../rust/data/inputs/03.txt", mode="r") as f:
         lines = f.read().splitlines()
         for line in lines:
             for match in pattern.finditer(line):
@@ -44,6 +46,6 @@ def part2():
     return result
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(part1())
     print(part2())

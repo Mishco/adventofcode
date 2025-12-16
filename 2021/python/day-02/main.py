@@ -6,6 +6,7 @@ down 8
 forward 2
 """
 
+
 def part1(input_str: str):
     horizontal_position = 0
     depth = 0
@@ -19,6 +20,7 @@ def part1(input_str: str):
             depth -= int(value)
 
     return horizontal_position * depth
+
 
 def part2(input_str: str):
     horizontal_position = 0
@@ -41,8 +43,8 @@ def part2(input_str: str):
     return horizontal_position * depth
 
 
-if __name__ == '__main__':
-    f = open('../inputs/2021-02.txt', mode='r').read()
+if __name__ == "__main__":
+    f = open("../inputs/2021-02.txt", mode="r").read()
 
     res = part1(test_input)
     assert res == 150

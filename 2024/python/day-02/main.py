@@ -1,14 +1,16 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'utils')))
+sys.path.insert(
+    0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "utils"))
+)
 from benchmark import benchmark
 
 
 @benchmark
 def part1():
     safe_count = 0
-    with open('../../rust/data/inputs/02.txt', mode='r') as f:
+    with open("../../rust/data/inputs/02.txt", mode="r") as f:
         lines = f.read().splitlines()
 
         for line in lines:
@@ -38,10 +40,11 @@ def checking_level(nums: []) -> bool:
 
     return is_increasing or is_decreasing
 
+
 @benchmark
 def part2():
     safe_count = 0
-    with open('../../rust/data/inputs/02.txt', mode='r') as f:
+    with open("../../rust/data/inputs/02.txt", mode="r") as f:
         lines = f.read().splitlines()
         for line in lines:
             nums = line.split()
@@ -57,6 +60,6 @@ def part2():
     return safe_count
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(part1())
     print(part2())

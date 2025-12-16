@@ -1,13 +1,8 @@
 from heapq import heappop, heappush
 
-DIRECTIONS = [
-    (0, 1),
-    (1, 0),
-    (0, -1),
-    (-1, 0)
-]
+DIRECTIONS = [(0, 1), (1, 0), (0, -1), (-1, 0)]
 
-HUGE_NUMBER = float('inf')
+HUGE_NUMBER = float("inf")
 
 
 def is_valid_pos(pos, arr):
@@ -30,7 +25,10 @@ def run(min_distance, max_consecutive):
         visited.add((x, y, disallowed_direction))
 
         for direction in range(4):
-            if direction == disallowed_direction or (direction + 2) % 4 == disallowed_direction:
+            if (
+                direction == disallowed_direction
+                or (direction + 2) % 4 == disallowed_direction
+            ):
                 continue
 
             cost_increase = 0
@@ -51,10 +49,10 @@ def run(min_distance, max_consecutive):
                         heappush(q, (nc, xx, yy, direction))
 
 
-if __name__ == '__main__':
-    data = open('../inputs/day17.txt').read().strip()
+if __name__ == "__main__":
+    data = open("../inputs/day17.txt").read().strip()
 
-    L = data.split('\n')
+    L = data.split("\n")
     city_grid = [[int(c) for c in row] for row in L]
 
     start = (0, 0)

@@ -9,25 +9,25 @@ test = """30373
 35390
 """
 
-lines = [list(x) for x in test.split('\n')]
+lines = [list(x) for x in test.split("\n")]
 
 # create grid
 grid = [list(map(int, row)) for row in test.split()]
 pprint(grid)
 
 rows, cols = len(grid), len(grid[0])
-directions = [(-1, 0), (1, 0), (0, -1), (0,1)]
+directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+
 
 def travel(r, c, dr, dc):
     while 0 <= (r := r + dr) < rows and 0 <= (c := c + dc) < cols:
         yield grid[r][c]
 
+
 # tree_can_be_visible()
 # print(list(travel(0,0,0,1)))
 # print(list(travel(0,0,1,1)))
 # print(list(travel(0,0,1,0)))
-
-
 
 
 visible = []
@@ -48,5 +48,5 @@ edges = 4 * (len(lines) - 1)  # 16
 #                 if item > lines[i][j]:
 #                     visible.append(item)
 
-#print('----')
-#print(count_visibles)
+# print('----')
+# print(count_visibles)

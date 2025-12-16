@@ -2,7 +2,9 @@ import os
 import sys
 from collections import Counter
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'utils')))
+sys.path.insert(
+    0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "utils"))
+)
 from benchmark import benchmark
 
 
@@ -40,7 +42,7 @@ def load_input_to_two_cols():
     columns1 = []
     columns2 = []
 
-    with open('../../rust/data/inputs/01.txt', mode='r') as f:
+    with open("../../rust/data/inputs/01.txt", mode="r") as f:
         lines = f.read().splitlines()
 
         for line in lines:
@@ -53,6 +55,6 @@ def load_input_to_two_cols():
     return columns1, columns2
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(part1())
     print(part2())

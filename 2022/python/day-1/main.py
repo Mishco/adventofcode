@@ -14,12 +14,12 @@ ii = """
 
 10000
 """
-content = open('../inputs/day01.txt').readlines()
+content = open("../inputs/day01.txt").readlines()
 
 current_val = 0
 sum_elves = []
 for ln in content:
-    if ln != '\n':
+    if ln != "\n":
         current_val += int(ln)
     else:
         sum_elves.append(current_val)
