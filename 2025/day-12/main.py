@@ -1,5 +1,5 @@
 def part1():
-    data = open('../inputs/day-12.txt').read()
+    data = open("../inputs/day-12.txt").read()
 
     chunks = data.replace(":", "").replace("x", " ").split("\n\n")
     regions = chunks.pop()
