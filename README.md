@@ -11,22 +11,22 @@ language of choice.
 <!--ts-->
 
 - [Advent of code](#advent-of-code)
-    - [Table of contents](#table-of-contents)
-    - [2015](#2015)
-        - [Python solution for 2015](#python-solution-for-2015)
-    - [2021](#2021)
-        - [Python solution for 2021](#python-solution-for-2021)
-        - [Rust solution for 2021](#rust-solution-for-2021)
-    - [2022](#2022)
-        - [Python solution for 2022](#python-solution-for-2022)
-    - [2023](#2023)
-        - [Rust solution for 2023](#rust-solution-for-2023)
-        - [Python solution for 2023](#python-solution-for-2023)
-    - [2024](#2024)
-        - [Rust solution for 2024](#rust-solution-for-2024)
-        - [Python solution for 2024](#python-solution-for-2024)
-    - [2025](#2025)
-        - [Python solution for 2025](#python-solution-for-2025)
+  - [Table of contents](#table-of-contents)
+  - [2015](#2015)
+    - [Python solution for 2015](#python-solution-for-2015)
+  - [2021](#2021)
+    - [Python solution for 2021](#python-solution-for-2021)
+    - [Rust solution for 2021](#rust-solution-for-2021)
+  - [2022](#2022)
+    - [Python solution for 2022](#python-solution-for-2022)
+  - [2023](#2023)
+    - [Rust solution for 2023](#rust-solution-for-2023)
+    - [Python solution for 2023](#python-solution-for-2023)
+  - [2024](#2024)
+    - [Rust solution for 2024](#rust-solution-for-2024)
+    - [Python solution for 2024](#python-solution-for-2024)
+  - [2025](#2025)
+    - [Python solution for 2025](#python-solution-for-2025)
 
 <!--te-->
 
@@ -154,7 +154,7 @@ Benchmark
 | [Day 24](2024/rust/src/bin/24.rs) | `25.1µs`  | `41.8µs`  |
 | [Day 25](2024/rust/src/bin/25.rs) |  `1.5ms`  |    `-`    |
 
-**Total: 1660.58ms**
+Total: **1660.58ms**
 
 ### Python solution for 2024
 
